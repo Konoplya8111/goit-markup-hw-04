@@ -136,8 +136,6 @@ header {
   margin-right: 10px;
   vertical-align: middle;
 
-  width: 24px;
-  height: 24px;
   fill: var(--title-text-color);
 }
 
