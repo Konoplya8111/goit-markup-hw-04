@@ -79,12 +79,11 @@ header {
   display: flex;
   margin-left: 93px;
 }
-
 .site-nav .item:not(:last-child) {
   margin-right: 50px;
 }
 
-.site-nav .link {
+.site-nav .link-menu {
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
@@ -96,8 +95,8 @@ header {
   letter-spacing: 0.02em;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
+.site-nav .link-menu:hover,
+.site-nav .link-menu:focus {
   color: var(--accent-color);
 }
 
@@ -107,34 +106,16 @@ header {
   margin-left: auto;
 }
 
-.link::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  margin-right: 10px;
-}
-
-.mail::before {
-  background-image: url(../images/mail.svg);
-}
-
-.phone::before {
-  background-image: url(../images/telephone.svg);
-}
-
 .site-contakt .item:not(:last-child) {
   margin-right: 50px;
 }
 
-.site-contakt .link:hover,
-.site-contakt .link:focus {
+.site-contakt .link-icon:hover,
+.site-contakt .link-icon:focus {
   color: var(--accent-color);
 }
 
-.site-contakt .link {
+.site-contakt .link-icon {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -144,6 +125,19 @@ header {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
+}
+
+.link-icons:hover,
+.link-icons:focus {
+  fill: var(--accent-color);
+}
+
+.link-icons {
+  margin-right: 10px;
+
+  width: 24px;
+  height: 24px;
+  fill: var(--title-text-color);
 }
 
 /* Контейнер Hero*/
@@ -165,14 +159,15 @@ header {
 }
 
 .hero-title {
+  margin-bottom: 32px;
+  text-align: center;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
-  margin-bottom: 32px;
 }
 
 /*Герой, кнопка*/
@@ -199,8 +194,28 @@ header {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+.box-item {
+  margin-bottom: 30px;
+  justify-content: center;
+  display: flex;
+  padding-top: 25px;
 
-.list-item::before {
+  width: 270px;
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+}
+
+.list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.item-icons {
+  width: 65.32px;
+  height: 70px;
+  margin-bottom: 55px;
+}
+/*.list-item::before {
   display: block;
   content: "";
   background-repeat: no-repeat;
@@ -223,7 +238,7 @@ header {
 
 .astronaut::before {
   background-image: url(../images/astronaut.svg);
-}
+}*/
 
 .container-features {
   width: 1200px;
@@ -317,41 +332,47 @@ header {
   display: flex;
 }
 
-.container-team .item:not(:last-child) {
+.container-team .item-card:not(:last-child) {
   margin-right: 30px;
 }
 
-.team::after {
-  display: block;
-  content: "";
-  background-repeat: no-repeat;
-  height: 44px;
-  background-position: 25px 0px;
-  background-image: url(../images/instagram.svg);
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.team::after {
-  background-image: url(../images/twitter.svg);
-  background-image: url(../images/facebook.svg);
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 16px;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: #afb1b8;
 }
-.container-team .card {
+
+.social-link:not(:last-child) {
+  margin-right: 10px;
+}
+.social-link:hover {
+  background: var(--accent-color);
+}
+.social-link:hover svg {
+  fill: #ffffff;
+}
+
+.item-card {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-}
-/*пример*/
 
-.team {
-  background-image: url(../images/facebook.svg);
-  background-image: url(../images/instagram.svg);
-  background-size: 200px;
-  position: relative;
-  width: 44px;
-  height: 44px;
-  background-repeat: no-repeat;
-  display: inline-block;
+  width: 270px;
+  height: 428px;
 }
-/********/
 
 .team-content {
   padding-top: 30px;
@@ -374,9 +395,64 @@ header {
   text-align: center;
 }
 
-.footer {
-  background-color: #2f303a;
-  height: 252px;
+/*Контейнер clients*/
+
+.clients {
+  padding-bottom: 94px;
+}
+
+.container-clients {
+  width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+.clients-title {
+  padding-top: 94px;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  color: var(--primary-text-color);
+}
+
+.customers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customers-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.customers-item {
+  margin-top: 50px;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.logo-clients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 170px;
+  height: 92px;
+}
+
+.logo-clients:hover {
+  fill: var(--accent-color);
+}
+
+.logo-clients {
+  fill: #afb1b8;
+}
+
+.customers-item:hover {
+  border: 1px solid var(--accent-color);
 }
 
 /*Контейнер контакти (footer)*/
@@ -384,9 +460,16 @@ header {
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  background-color: #2f303a;
+  height: 252px;
 }
 
 .container-contacts {
+  display: flex;
+  align-items: baseline;
+  gap: 70px;
+
   width: 1200px;
   margin: 0px auto;
   padding: 0px 15px;
@@ -435,6 +518,47 @@ header {
   line-height: 1.71;
   color: #ffffff;
   font-style: normal;
+}
+
+.networks-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  font-style: normal;
+  color: #ffffff;
+}
+
+.footer-social {
+  display: flex;
+  align-items: baseline;
+  margin-top: 20px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-link:hover {
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+.footer-link {
+  fill: #ffffff;
+}
+
+.social-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
 }
 
 /*Контейнер портфоліо (button)*/
@@ -497,6 +621,12 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+.card-item:hover {
+  background: #ffffff;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card-content {
